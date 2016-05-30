@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Hello App Engine</title>
+	
+	<script src="jquery-2.2.3.min.js"></script>
+ 	<script>  
+ 		$( function() {
+ 			$('#calc1').click( function() {
+ 				var varn = $('#varn').val();
+ 				var varm = $('#varm').val();
+ 				$('#result1').load("/task?varn="+varn+"&varm="+varm); 
+ 			});
+ 			
+ 			$('#calc2').click( function() {
+ 				var vara = $('#vara').val();
+ 				var varb = $('#varb').val();
+ 				var varc = $('#varc').val();
+ 				$('#result2').load("/task?vara="+vara+"&varb="+varb+"&varc="+varc); 
+ 			});
+ 			
+ 			$('#mass_button').click( function() {
+ 				var mass_a = $('#mass_a').val();
+ 				$('#mass_result').load("/task?mass_a="+mass_a); 
+ 			});
+ 			
+ 			$('#mass2_button').click( function() {
+ 				var mass_b = $('#mass_b').val();
+ 				$('#mass2_result').load("/task?mass_b="+mass_b); 
+ 			});
+ 		});
+ 	</script> 
+ 
+  </head>
+
+  <body>
+    
+ 
+     	<h3>Какое из чисел ближе к 10?</h3>
+    	<input id="varn"type="text"/> или
+    	<input id="varm"type="text"/>
+    	<button id="calc1">Ответ</button><br>
+    	<span style="color:blue; font-size:24; font-family: footlight mt light" id="result1"></span><br><br><br>
+    	
+    	<h3>Найти корни квадратного уравнения</h3>
+    	<input id="vara"type="text"/> x^2 +
+    	<input id="varb"type="text"/> x +
+    	<input id="varc"type="text"/> =
+    	<button id="calc2">Найти</button><br>
+    	<span style="color:blue; font-size:24; font-family: footlight mt light" id="result2"></span><br><br><br>
+    	
+    	<h3>Массив 5*8</h3>
+    	<input id="mass_a"type="hidden"/>
+    	<button id="mass_button">Покажи!</button><br>
+    	<span style="color:blue; font-size:24; font-family: footlight mt light" id="mass_result"></span><br><br><br>
+    	
+    	<h3>Массив 8*5 с максимумом</h3>
+    	<input id="mass_b"type="hidden"/>
+    	<button id="mass2_button">Покажи!</button><br>
+    	<span style="color:blue; font-size:24; font-family: footlight mt light" id="mass2_result"></span><br>
+    	       
+    
+  </body>
+</html>
